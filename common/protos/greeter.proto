@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package greeter;
+
+import "google/protobuf/empty.proto";
+
+service GreeterService {
+    rpc GetHealth(google.protobuf.Empty) returns (Greeting) {};
+    rpc SayHello(SayHelloRequest) returns (Greeting) {};
+}
+
+message SayHelloRequest {
+    string message = 1;
+}
+
+message Greeting {
+    string message = 1;
+}
